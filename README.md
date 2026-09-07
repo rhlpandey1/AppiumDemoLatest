@@ -406,7 +406,7 @@ BROWSERSTACK_ACCESS_KEY
 
 The Java framework reads them using:
 
-```java
+```text
 System.getenv("BROWSERSTACK_USERNAME");
 System.getenv("BROWSERSTACK_ACCESS_KEY");
 ```
@@ -451,13 +451,13 @@ browserstack.properties
 
 The manager provides:
 
-```java
+```text
 get("key")
 ```
 
 for common/local configuration and:
 
-```java
+```text
 getBrowserStack("key")
 ```
 
@@ -465,7 +465,7 @@ for BrowserStack configuration.
 
 Example implementation:
 
-```java
+```text
 package utils;
 
 import java.io.InputStream;
@@ -549,7 +549,7 @@ constants/FrameworkConstants.java
 
 Example:
 
-```java
+```text
 package constants;
 
 public class FrameworkConstants {
@@ -573,7 +573,7 @@ Create:
 constants/ExecutionEnvironment.java
 ```
 
-```java
+```text
 package constants;
 
 public enum ExecutionEnvironment {
@@ -593,7 +593,7 @@ This provides type-safe handling of execution environments.
 
 Implementation:
 
-```java
+```text
 package driver;
 
 import io.appium.java_client.AppiumDriver;
@@ -681,7 +681,7 @@ This keeps driver creation out of the test classes.
 
 Use:
 
-```java
+```text
 UiAutomator2Options
 ```
 
@@ -697,7 +697,7 @@ appActivity = .Settings
 
 Driver creation:
 
-```java
+```text
 return new AndroidDriver(
         new URL(
                 ConfigManager.getInstance()
@@ -731,7 +731,7 @@ Physical Android Device
 
 Use:
 
-```java
+```text
 UiAutomator2Options
 ```
 
@@ -781,7 +781,7 @@ Application
 
 Use:
 
-```java
+```text
 XCUITestOptions
 ```
 
@@ -797,7 +797,7 @@ app = bs://...
 
 Driver:
 
-```java
+```text
 return new IOSDriver(
         new URL(browserstackUrl),
         options
@@ -838,7 +838,7 @@ Responsibilities:
 
 Example:
 
-```java
+```text
 @BeforeMethod
 @Parameters({"environment", "platform"})
 public void setup(
@@ -884,7 +884,7 @@ The test classes therefore do not contain driver initialization code.
 
 Example:
 
-```java
+```text
 public SettingsPage getSettingsPage() {
 
     if (settingsPage == null) {
@@ -902,7 +902,7 @@ public SettingsPage getSettingsPage() {
 
 Similarly:
 
-```java
+```text
 public WikipediaPage getWikipediaPage() {
 
     if (wikipediaPage == null) {
@@ -939,13 +939,13 @@ Tests should describe the business action.
 
 Example:
 
-```java
+```text
 settingsPage.clickConnections();
 ```
 
 instead of:
 
-```java
+```text
 driver.findElement(...).click();
 ```
 
@@ -979,7 +979,7 @@ Class name
 
 Example UIAutomator:
 
-```java
+```text
 AppiumBy.androidUIAutomator(
         "new UiSelector().text(\"Wi-Fi\")"
 );
@@ -987,7 +987,7 @@ AppiumBy.androidUIAutomator(
 
 Example XPath:
 
-```java
+```text
 AppiumBy.xpath(
         "//android.widget.TextView" +
         "[@resource-id='android:id/title' " +
@@ -1013,7 +1013,7 @@ when many elements can match.
 
 Use explicit waits:
 
-```java
+```text
 wait.until(
         ExpectedConditions
                 .visibilityOfElementLocated(locator)
@@ -1022,7 +1022,7 @@ wait.until(
 
 or:
 
-```java
+```text
 wait.until(
         ExpectedConditions
                 .elementToBeClickable(locator)
@@ -1031,7 +1031,7 @@ wait.until(
 
 Avoid unnecessary:
 
-```java
+```text
 Thread.sleep(5000);
 ```
 
@@ -1078,13 +1078,13 @@ listeners/ScreenshotListener.java
 
 Implement:
 
-```java
+```text
 ITestListener
 ```
 
 and override:
 
-```java
+```text
 onTestFailure()
 ```
 
@@ -1543,7 +1543,7 @@ Additional iOS coverage can be added later.
 
 The framework already uses:
 
-```java
+```text
 ThreadLocal<AppiumDriver>
 ```
 
