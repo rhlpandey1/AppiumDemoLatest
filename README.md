@@ -393,11 +393,13 @@ browserstack.ios.platform.version=16
 
 The `bs://...` values are obtained after uploading the applications to BrowserStack.
 Commands to get the bs and app id values 
-**Android:**
+
+**Android**
 curl -u "%BROWSERSTACK_USERNAME%:%BROWSERSTACK_ACCESS_KEY%" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "data={\"url\": \"https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk\", \"custom_id\": \"WikipediaSample\"}"
+
 curl -u "%BROWSERSTACK_USERNAME%:%BROWSERSTACK_ACCESS_KEY%" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "url=https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk"
 
-**iOS:**
+*iOS*
 curl -u "%BROWSERSTACK_USERNAME%:%BROWSERSTACK_ACCESS_KEY%" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "url=https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa"
     **shell command**
     curl.exe -u "$env:BROWSERSTACK_USERNAME`:$env:BROWSERSTACK_ACCESS_KEY" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "url=https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa"
