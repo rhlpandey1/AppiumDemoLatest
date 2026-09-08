@@ -1028,6 +1028,20 @@ Avoid overly generic locators such as:
 
 when many elements can match.
 
+iOS
+```text
+iOS Appium Locator Strategy
+
+Recommended locator priority for iOS Appium automation:
+
+Priority	Locator Type	Appium Method	Example	Recommendation
+🥇 1	Accessibility ID	AppiumBy.accessibilityId()	AppiumBy.accessibilityId("loginButton")	Best choice — fast, stable, readable
+🥈 2	iOS Predicate String	AppiumBy.iOSNsPredicateString()	AppiumBy.iOSNsPredicateString("name == 'Login'")	Excellent fallback; powerful attribute-based queries
+🥉 3	iOS Class Chain	AppiumBy.iOSClassChain()	AppiumBy.iOSClassChain("**/XCUIElementTypeButton[\name == 'Login'`]")`	Good for complex UI hierarchies
+4	XPath	AppiumBy.xpath()	AppiumBy.xpath("//XCUIElementTypeButton[@name='Login']")	Use as a last resort; more fragile
+5	Class Name	AppiumBy.className()	AppiumBy.className("
+```
+
 ---
 
 # 29. Explicit Waits
